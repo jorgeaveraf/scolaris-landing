@@ -1,8 +1,17 @@
 import { FC } from "react";
+import { useSectionInView } from "../hooks/useSectionInView";
 
 const Hero: FC = () => {
+  const { ref, inView } = useSectionInView();
+
   return (
-    <section className="bg-white py-10 px-6">
+    <section
+      ref={ref}
+      id="hero"
+      className={`bg-white py-10 px-6 transition-all duration-700 ${
+        inView ? "opacity-100 blur-0 scale-100" : "opacity-40 blur-sm scale-[0.98]"
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-8">
         {/* Contenido principal */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-10">
@@ -15,12 +24,13 @@ const Hero: FC = () => {
               Inscripciones, pagos y reportes automáticos. Todo en un solo lugar.
             </p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-              <button className="bg-scolBlue text-white px-6 py-3 rounded-full shadow hover:bg-scolLight transition">
-                Probar gratis 1 mes
-              </button>
-              <button className="border border-scolBlue text-scolBlue px-6 py-3 rounded-full hover:bg-scolGray transition">
-                Ver demo
-              </button>
+            <button className="bg-scolBlue text-white px-6 py-3 rounded-full shadow hover:bg-scolLight hover:scale-105 hover:shadow-lg transition-transform duration-200">
+              Probar gratis 1 mes
+            </button>
+
+            <button className="border border-scolBlue text-scolBlue px-6 py-3 rounded-full hover:bg-scolGray hover:scale-105 hover:shadow-lg transition-transform duration-200">
+              Ver demo
+            </button>
             </div>
           </div>
 
