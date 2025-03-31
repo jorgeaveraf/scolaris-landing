@@ -7,6 +7,11 @@ interface Plan {
   features: string[];
   description: string;
   highlight?: boolean;
+  paymentUrl: string;
+}
+
+interface PricingProps {
+  openPaymentModal: (plan: Plan) => void;
 }
 
 const plans: Plan[] = [
@@ -20,6 +25,7 @@ const plans: Plan[] = [
       "Gestión de inscripciones y pagos",
       "Acceso a reportes y analíticas",
     ],
+    paymentUrl: import.meta.env.VITE_MERCADOPAGO_URL_BASIC,
   },
   {
     name: "Estándar",
@@ -32,6 +38,7 @@ const plans: Plan[] = [
       "Reportes y analíticas avanzadas",
     ],
     highlight: true,
+    paymentUrl: import.meta.env.VITE_MERCADOPAGO_URL_STANDARD,
   },
   {
     name: "Premium",
@@ -44,10 +51,11 @@ const plans: Plan[] = [
       "Alertas y notificaciones personalizadas",
       "Acceso anticipado a nuevas funciones",
     ],
+    paymentUrl: import.meta.env.VITE_MERCADOPAGO_URL_PREMIUM,
   },
 ];
 
-const Pricing: FC = () => {
+const Pricing: FC<PricingProps> = ({ openPaymentModal }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const { ref, inView } = useSectionInView();
 
@@ -98,6 +106,7 @@ const Pricing: FC = () => {
                   </ul>
                 </div>
                 <button
+                  onClick={() => openPaymentModal(plan)}
                   className={`w-full py-2 rounded font-semibold transition-transform duration-200 hover:scale-105 hover:shadow-lg ${
                     isHovered || isHighlight
                       ? "bg-white text-scolBlue hover:bg-gray-100"
