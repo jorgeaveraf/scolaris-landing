@@ -1,32 +1,29 @@
 import { FC } from "react";
+import person from "../assets/person.svg";
+import payment from "../assets/payment.svg";
+import analytics from "../assets/analytics.svg";
 
-interface FeatureItem {
-  title: string;
-  description: string;
-  icon: JSX.Element;
-}
-
-const features: FeatureItem[] = [
+const features = [
   {
-    title: "Gestión de inscripciones",
-    description: "Facilita el proceso de inscripción y evita duplicados.",
-    icon: <span className="text-3xl">📝</span>,
+    icon: person,
+    title: "Inscripciones simples y centralizadas",
+    description: "Ordena y registra fácilmente todos los alumnos sin duplicados.",
   },
   {
-    title: "Control de pagos automatizado",
-    description: "Cobra, factura y gestiona adeudos de manera eficiente.",
-    icon: <span className="text-3xl">💳</span>,
+    icon: payment,
+    title: "Gestión de pagos internos",
+    description: "Controla adeudos y estados de cuenta por estudiante.",
   },
   {
-    title: "Dashboards y reportes en tiempo real",
-    description: "Toma decisiones con base en datos siempre actualizados.",
-    icon: <span className="text-3xl">📊</span>,
+    icon: analytics,
+    title: "Reportes en tiempo real",
+    description: "Visualiza información clave para tomar mejores decisiones.",
   },
 ];
 
 const Features: FC = () => {
   return (
-    <section className="bg-scolGray py-16 px-6">
+    <section id="features" className="bg-scolGray py-20 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-scolBlue mb-12">
           Lo que hace especial a Scolaris
@@ -35,11 +32,15 @@ const Features: FC = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition"
+              className="bg-white rounded-xl p-6 shadow-sm flex flex-col items-center text-center"
             >
-              <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold text-scolDark mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <img src={feature.icon} alt="" className="h-16 mb-4" />
+              <h3 className="font-bold text-lg mb-2 text-scolDark">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 text-sm font-sans">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>

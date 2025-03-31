@@ -1,23 +1,41 @@
-const Hero = () => {
-    return (
-      <section className="bg-white py-16 px-6 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-scolBlue mb-4">
-          Gestiona tu escuela en un solo click!
-        </h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-6">
-          Inscripciones, pagos y reportes automáticos. Todo en un solo lugar.
-        </p>
-        <div className="flex justify-center gap-4">
-          <button className="bg-scolBlue text-white px-6 py-3 rounded-lg shadow-md hover:bg-scolLight transition">
-            Probar gratis 1 mes
-          </button>
-          <button className="bg-white text-scolBlue px-6 py-3 border border-scolBlue rounded-lg hover:bg-scolGray transition">
-            Ver demo
-          </button>
+import { FC } from "react";
+
+const Hero: FC = () => {
+  return (
+    <section className="bg-white py-10 px-6">
+      <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-8">
+        {/* Contenido principal */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+          {/* Texto */}
+          <div className="md:w-1/2 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-bold text-scolBlue leading-tight tracking-tight mb-3 font-avenir">
+              Gestiona tu escuela en un solo click!
+            </h1>
+            <p className="text-lg text-gray-700 mb-6 font-sans">
+              Inscripciones, pagos y reportes automáticos. Todo en un solo lugar.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+              <button className="bg-scolBlue text-white px-6 py-3 rounded-full shadow hover:bg-scolLight transition">
+                Probar gratis 1 mes
+              </button>
+              <button className="border border-scolBlue text-scolBlue px-6 py-3 rounded-full hover:bg-scolGray transition">
+                Ver demo
+              </button>
+            </div>
+          </div>
+
+          {/* Ilustración */}
+          <div className="md:w-1/2">
+            <img
+              src="/src/assets/hero.svg"
+              alt="Vista previa de Scolaris"
+              className="w-full max-w-md mx-auto md:ml-6"
+            />
+          </div>
         </div>
-      </section>
-    );
-  };
-  
-  export default Hero;
-  
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
