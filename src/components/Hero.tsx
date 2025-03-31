@@ -1,7 +1,14 @@
+// Hero.tsx
 import { FC } from "react";
 import { useSectionInView } from "../hooks/useSectionInView";
 
-const Hero: FC = () => {
+interface HeroProps {
+  openModal: () => void;
+  openVideo: () => void;
+}
+
+
+const Hero: FC<HeroProps> = ({ openModal, openVideo }) => {
   const { ref, inView } = useSectionInView();
 
   return (
@@ -13,9 +20,7 @@ const Hero: FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-8">
-        {/* Contenido principal */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-          {/* Texto */}
           <div className="md:w-1/2 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-bold text-scolBlue leading-tight tracking-tight mb-3 font-avenir">
               Gestiona tu escuela en un solo click!
@@ -24,17 +29,21 @@ const Hero: FC = () => {
               Inscripciones, pagos y reportes automáticos. Todo en un solo lugar.
             </p>
             <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-            <button className="bg-scolBlue text-white px-6 py-3 rounded-full shadow hover:bg-scolLight hover:scale-105 hover:shadow-lg transition-transform duration-200">
-              Probar gratis 1 mes
-            </button>
-
-            <button className="border border-scolBlue text-scolBlue px-6 py-3 rounded-full hover:bg-scolGray hover:scale-105 hover:shadow-lg transition-transform duration-200">
-              Ver demo
-            </button>
+              <button
+                onClick={openModal}
+                className="bg-scolBlue text-white px-6 py-3 rounded-full shadow hover:bg-scolLight hover:scale-105 hover:shadow-lg transition-transform duration-200"
+              >
+                Probar gratis 1 mes
+              </button>
+              <button
+                onClick={openVideo}
+                className="border border-scolBlue text-scolBlue px-6 py-3 rounded-full hover:bg-scolGray hover:scale-105 hover:shadow-lg transition-transform duration-200"
+              >
+                Ver demo
+              </button>
             </div>
           </div>
 
-          {/* Ilustración */}
           <div className="md:w-1/2">
             <img
               src="/src/assets/hero.svg"
