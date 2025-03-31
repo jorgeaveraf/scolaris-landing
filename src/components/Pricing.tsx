@@ -4,6 +4,7 @@ interface Plan {
   name: string;
   price: string;
   features: string[];
+  description: string;
   highlight?: boolean;
 }
 
@@ -11,31 +12,36 @@ const plans: Plan[] = [
   {
     name: "Básico",
     price: "$600 / mes",
+    description: "Perfecto para escuelas que están comenzando a digitalizar su operación.",
     features: [
       "Hasta 50 alumnos",
-      "1 usuario",
-      "Inscripciones y pagos básicos",
+      "1 usuario administrador",
+      "Gestión de inscripciones y pagos",
+      "Acceso a reportes y analíticas",
     ],
   },
   {
     name: "Estándar",
     price: "$1,100 / mes",
+    description: "Ideal para escuelas que necesitan orden, control y visibilidad en el día a día.",
     features: [
       "Hasta 100 alumnos",
-      "2 usuarios con roles",
-      "Campos personalizados",
-      "Reportes descargables",
+      "2 usuarios con roles definidos",
+      "Personalización de la plataforma",
+      "Reportes y analíticas avanzadas",
     ],
     highlight: true,
   },
   {
     name: "Premium",
     price: "$2,000 / mes",
+    description: "Para instituciones que buscan control total, eficiencia y soporte preferente.",
     features: [
       "Hasta 200 alumnos",
       "4 usuarios con control de acceso",
-      "Automatización avanzada",
-      "Soporte prioritario",
+      "Automatizaciones avzanzadas",
+      "Alertas y notificaciones personalizadas",
+      "Acceso anticipado a nuevas funciones",
     ],
   },
 ];
@@ -51,25 +57,34 @@ const Pricing: FC = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`rounded-xl shadow-md p-6 border ${
+              className={`rounded-xl shadow-md p-6 border transition flex flex-col justify-between ${
                 plan.highlight
                   ? "bg-scolSky text-white border-scolBlue scale-105"
                   : "bg-white text-gray-800 border-gray-200"
-              } transition`}
+              }`}
             >
-              <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
-              <p className="text-xl font-bold mb-6">{plan.price}</p>
-              <ul className="text-sm mb-6 space-y-2">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx}>• {feature}</li>
-                ))}
-              </ul>
+              <div>
+                <h3 className="text-2xl font-semibold mb-2">{plan.name}</h3>
+                <p className="text-xl font-bold mb-2">{plan.price}</p>
+                <p
+                  className={`text-sm mb-4 ${
+                    plan.highlight ? "text-white/90" : "text-gray-600"
+                  }`}
+                >
+                  {plan.description}
+                </p>
+                <ul className="text-sm mb-6 space-y-2">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx}>• {feature}</li>
+                  ))}
+                </ul>
+              </div>
               <button
-                className={`w-full py-2 rounded ${
+                className={`w-full py-2 rounded font-semibold transition ${
                   plan.highlight
-                    ? "bg-white text-scolBlue font-bold"
-                    : "bg-scolBlue text-white"
-                } hover:opacity-90 transition`}
+                    ? "bg-white text-scolBlue hover:bg-gray-100"
+                    : "bg-scolBlue text-white hover:bg-scolDark"
+                }`}
               >
                 Contratar
               </button>

@@ -6,6 +6,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Open Sans', 'sans-serif'],
+        avenir: ['Avenir', 'sans-serif'],
+      },
+      fontWeight: {
+        light: '400',
+        bold: '700',
+      },
+
       colors: {
         scolBlue: "#0f81c7",
         scolLight: "#1b9eee",
