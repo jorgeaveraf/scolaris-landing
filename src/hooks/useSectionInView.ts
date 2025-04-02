@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useSectionInView() {
-  const ref = useRef<HTMLElement | null>(null);
+export function useSectionInView<T extends HTMLElement = HTMLElement>()  {
+  const ref = useRef<T | null>(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {

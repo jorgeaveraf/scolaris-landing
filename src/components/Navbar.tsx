@@ -1,17 +1,28 @@
 import { FC, useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 
 const Navbar: FC = () => {
   const [hasShadow, setHasShadow] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
-      setHasShadow(window.scrollY > 10); // activa cuando se baja un poco
+      setHasShadow(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLogoClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
 
   return (
     <nav
@@ -20,13 +31,15 @@ const Navbar: FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Logo />
+        {/* Logo con comportamiento dinámico */}
+        <div onClick={handleLogoClick} className="cursor-pointer">
+          <Logo />
+        </div>
 
-        {/* Navegación futura */}
         <div className="hidden md:flex items-center gap-6 text-sm font-sans text-scolBlue">
-          <a href="#features" className="hover:underline">Características</a>
-          <a href="#pricing" className="hover:underline">Planes</a>
-          <a href="#contact" className="hover:underline">Contacto</a>
+          <Link to="/features" className="hover:underline">Características</Link>
+          <Link to="/pricing" className="hover:underline">Planes</Link>
+          <Link to="/contact" className="hover:underline">Contacto</Link>
         </div>
       </div>
     </nav>
