@@ -7,16 +7,15 @@ import Pricing from "./components/Pricing";
 import AppExperience from "./components/AppExperience";
 import Testimonial from "./components/Testimonial";
 import Footer from "./components/Footer";
+import FeaturesPage from "./pages/FeaturesPage";
+import PricingPage from "./pages/PricingPage";
+import ContactPage from "./pages/ContactPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import TermsPage from "./pages/TermsPage";
+import ScrollToTop from "./components/ScrollToTop";
 import Modal from "./components/common/Modal";
 import TrialRequestForm from "./components/forms/TrialRequestForm";
-
-interface Plan {
-  name: string;
-  price: string;
-  features: string[];
-  description: string;
-  paymentUrl: string;
-}
+import { Plan } from "./types/Plan";
 
 function App() {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
@@ -42,6 +41,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <main className="pt-20 bg-white text-gray-800 relative">
         <Routes>
@@ -58,14 +58,11 @@ function App() {
               </>
             }
           />
-          <Route
-            path="/demo"
-            element={
-              <div className="min-h-screen flex items-center justify-center text-3xl text-scolBlue">
-                Demo próximamente...
-              </div>
-            }
-          />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/features" element={<FeaturesPage />} />
+          <Route path="/pricing" element={<PricingPage openPaymentModal={openPaymentModal} />} />     
         </Routes>
       </main>
 
@@ -98,20 +95,35 @@ function App() {
             <h2 className="text-xl font-bold text-scolBlue">
               Contratar plan {selectedPlan.name}
             </h2>
-            <p className="text-lg font-semibold">{selectedPlan.price}</p>
+
             <ul className="text-sm text-left list-disc list-inside space-y-1">
               {selectedPlan.features.map((f, idx) => (
                 <li key={idx}>{f}</li>
               ))}
             </ul>
-            <a
-              href={selectedPlan.paymentUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 bg-scolBlue text-white px-6 py-2 rounded-full font-semibold hover:bg-scolDark transition"
-            >
-              Pagar con Mercado Pago
-            </a>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+              <a
+                href={selectedPlan.monthlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-scolBlue text-white px-6 py-2 rounded-md font-semibold hover:bg-scolDark transition shadow-sm hover:shadow-md"
+              >
+                Suscripción mensual
+              </a>
+
+              <a
+                href={selectedPlan.annualUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-scolBlue text-white px-6 py-2 rounded-md font-semibold hover:bg-scolDark transition shadow-sm hover:shadow-md"
+              >
+                Suscripción anual
+                <div className="text-xs font-normal leading-tight">
+                  Ahorra 10% con hasta 3 MSI
+                </div>
+              </a>
+            </div>
             <p className="text-xs text-gray-500 mt-2">
               Una vez realizado el pago recibirás un correo con los pasos para acceder.
             </p>

@@ -1,5 +1,6 @@
 // Footer.tsx
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 interface FooterProps {
   openModal: () => void;
@@ -23,7 +24,13 @@ const Footer: FC<FooterProps> = ({ openModal }) => {
 
       <div className="mt-10 text-sm text-white/70">
         <p>&copy; {new Date().getFullYear()} Scolaris. Todos los derechos reservados.</p>
-        <p className="mt-2">Privacidad · Términos · Contacto</p>
+        <p className="mt-2 space-x-2">
+          <Link to="/privacy" className="hover:underline">Aviso de Privacidad</Link>
+          <span>·</span>
+          <Link to="/terms" className="hover:underline">Términos y condiciones</Link>
+          <span>·</span>
+          <Link to="/contact" className="hover:underline">Contacto</Link>
+        </p>
       </div>
     </section>
   );

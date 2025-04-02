@@ -1,4 +1,5 @@
 import { FC, useState, useEffect } from "react";
+import { submitContact } from "./submitContact";
 
 interface Props {
   onSuccess: () => void;
@@ -17,10 +18,14 @@ const TrialRequestForm: FC<Props> = ({ onSuccess }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Formulario enviado:", form);
-    setSubmitted(true);
+    try {
+      await submitContact(form);
+      setSubmitted(true);
+    } catch (err) {
+      alert("Hubo un problema al enviar el mensaje.");
+    }
   };
 
   useEffect(() => {
@@ -77,6 +82,9 @@ const TrialRequestForm: FC<Props> = ({ onSuccess }) => {
         value={form.telefono}
         onChange={handleChange}
         className="w-full border border-gray-300 rounded px-4 py-2"
+        pattern="[0-9]{10,}"
+        inputMode="numeric"
+        title="Ingresa al menos 10 dígitos numéricos"
         required
       />
       <button

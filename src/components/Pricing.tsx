@@ -1,14 +1,6 @@
 import { FC, useState } from "react";
 import { useSectionInView } from "../hooks/useSectionInView";
-
-interface Plan {
-  name: string;
-  price: string;
-  features: string[];
-  description: string;
-  highlight?: boolean;
-  paymentUrl: string;
-}
+import { Plan } from "../types/Plan";
 
 interface PricingProps {
   openPaymentModal: (plan: Plan) => void;
@@ -25,7 +17,8 @@ const plans: Plan[] = [
       "Gestión de inscripciones y pagos",
       "Acceso a reportes y analíticas",
     ],
-    paymentUrl: import.meta.env.VITE_MERCADOPAGO_URL_BASIC,
+    monthlyUrl: import.meta.env.VITE_MERCADOPAGO_URL_BASIC_MONTHLY,
+    annualUrl: import.meta.env.VITE_MERCADOPAGO_URL_BASIC_ANNUAL,
   },
   {
     name: "Estándar",
@@ -38,7 +31,8 @@ const plans: Plan[] = [
       "Reportes y analíticas avanzadas",
     ],
     highlight: true,
-    paymentUrl: import.meta.env.VITE_MERCADOPAGO_URL_STANDARD,
+    monthlyUrl: import.meta.env.VITE_MERCADOPAGO_URL_STANDARD_MONTHLY,
+    annualUrl: import.meta.env.VITE_MERCADOPAGO_URL_STANDARD_ANNUAL,
   },
   {
     name: "Premium",
@@ -51,9 +45,11 @@ const plans: Plan[] = [
       "Alertas y notificaciones personalizadas",
       "Acceso anticipado a nuevas funciones",
     ],
-    paymentUrl: import.meta.env.VITE_MERCADOPAGO_URL_PREMIUM,
+    monthlyUrl: import.meta.env.VITE_MERCADOPAGO_URL_PREMIUM_MONTHLY,
+    annualUrl: import.meta.env.VITE_MERCADOPAGO_URL_PREMIUM_ANNUAL,
   },
 ];
+
 
 const Pricing: FC<PricingProps> = ({ openPaymentModal }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
