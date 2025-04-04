@@ -77,7 +77,7 @@ const FeaturesPage: FC = () => {
             Todo lo que necesitas,<br className="hidden md:block" /> en un solo lugar
           </h2>
           <p className="text-lg text-gray-600 max-w-xl leading-relaxed">
-            Scolaris no solo facilita tu trabajo diario, sino que transforma la manera en la que gestionas tu escuela. Estas son las razones por las que miles de instituciones confían en nosotros.
+            Scolaris no solo facilita tu trabajo diario, sino que transforma la manera en la que gestionas tu escuela. Estas son las razones por las que las instituciones confían en nosotros.
           </p>
         </div>
 

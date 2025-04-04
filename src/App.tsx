@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import VideoModalContainer from "./VideoModalContainer";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
@@ -16,18 +17,29 @@ import ScrollToTop from "./components/ScrollToTop";
 import Modal from "./components/common/Modal";
 import TrialRequestForm from "./components/forms/TrialRequestForm";
 import { Plan } from "./types/Plan";
+import BienvenidaPage from "./pages/BienvenidaPage";
+import ConfirmationPage from "./pages/ConfirmationPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import ManualsPage from "./pages/ManualsPage";
+import ManualLayout from "./layouts/ManualLayout";
+import HomeSection from "./pages/manuals/HomeSection";
+import AnalyticsSub from "./pages/manuals/home/AnalyticsSub";
+import ReportsSub from "./pages/manuals/home/ReportsSub";
+import AlertsSub from "./pages/manuals/home/AlertsSub";
+import PeriodosSection from "./pages/manuals/PeriodosSection";
+import TutoresSection from "./pages/manuals/TutoresSection";
+import AlumnosSection from "./pages/manuals/AlumnosSection";
+import InscripcionesSection from "./pages/manuals/InscripcionesSection";
+import PagosSection from "./pages/manuals/PagosSection";  
+
 
 function App() {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
 
   const openTrialModal = () => setIsTrialModalOpen(true);
   const closeTrialModal = () => setIsTrialModalOpen(false);
-
-  const openVideoModal = () => setIsVideoModalOpen(true);
-  const closeVideoModal = () => setIsVideoModalOpen(false);
 
   const openPaymentModal = (plan: Plan) => {
     setSelectedPlan(plan);
@@ -49,7 +61,7 @@ function App() {
             path="/"
             element={
               <>
-                <Hero openModal={openTrialModal} openVideo={openVideoModal} />
+                <Hero openModal={openTrialModal} />
                 <Features />
                 <Pricing openPaymentModal={openPaymentModal} />
                 <AppExperience />
@@ -62,7 +74,22 @@ function App() {
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/features" element={<FeaturesPage />} />
-          <Route path="/pricing" element={<PricingPage openPaymentModal={openPaymentModal} />} />     
+          <Route path="/pricing" element={<PricingPage openPaymentModal={openPaymentModal} />} />
+          <Route path="/bienvenida" element={<BienvenidaPage />} />
+          <Route path="/confirmation" element={<ConfirmationPage />} />
+          <Route path="/manuales" element={<ManualLayout />}>
+            <Route index element={<ManualsPage />} />
+            <Route path="home" element={<HomeSection />} />
+            <Route path="home/analiticas" element={<AnalyticsSub />} />
+            <Route path="home/reportes" element={<ReportsSub />} />
+            <Route path="home/alertas" element={<AlertsSub />} /> 
+            <Route path="periodos" element={<PeriodosSection />} />
+            <Route path="tutores" element={<TutoresSection />} />
+            <Route path="alumnos" element={<AlumnosSection />} />
+            <Route path="inscripciones" element={<InscripcionesSection />} />
+            <Route path="pagos" element={<PagosSection />} />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />     
         </Routes>
       </main>
 
@@ -73,20 +100,8 @@ function App() {
         </Modal>
       )}
 
-      {/* Modal para video demo */}
-      {isVideoModalOpen && (
-        <Modal isOpen={isVideoModalOpen} onClose={closeVideoModal} size="xl">
-          <div className="aspect-video w-full">
-            <iframe
-              src="https://www.youtube.com/embed/c0BJRR_TIEI"
-              title="Demo Scolaris"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              className="w-full h-full rounded-xl"
-            />
-          </div>
-        </Modal>
-      )}
+      {/* Modal para video */}
+      <VideoModalContainer />
 
       {/* Modal para pago */}
       {isPaymentModalOpen && selectedPlan && (
