@@ -2,6 +2,7 @@
 import { FC } from "react";
 import { useSectionInView } from "../hooks/useSectionInView";
 import { useVideoModalStore } from "../store/useVideoModalStore";
+import heroImg from "../assets/hero.svg"; // ajusta la ruta si está en otra carpeta
 
 interface HeroProps {
   openModal: () => void;
@@ -47,7 +48,7 @@ const Hero: FC<HeroProps> = ({ openModal }) => {
 
           <div className="md:w-1/2">
             <img
-              src="/src/assets/hero.svg"
+              src={heroImg}
               alt="Vista previa de Scolaris"
               className="w-full max-w-md mx-auto md:ml-6"
             />
