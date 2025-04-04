@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useSectionInView } from "../hooks/useSectionInView";
 import check from "../assets/check.png";
