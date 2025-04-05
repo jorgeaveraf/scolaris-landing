@@ -13,7 +13,7 @@ export function useSectionInView<T extends HTMLElement = HTMLElement>() {
         setInView(entry.isIntersecting);
       },
       {
-        threshold: 0.6,
+        threshold: 0.2,
         rootMargin: "-80px 0px -80px 0px",
       }
     );
