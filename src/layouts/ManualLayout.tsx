@@ -1,5 +1,3 @@
-// src/layouts/ManualLayout.tsx
-
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import ManualsMenu from "../pages/manuals/ManualsMenu";
@@ -9,29 +7,39 @@ const ManualLayout = () => {
 
   return (
     <div className="pt-1 pb-16 px-4 max-w-7xl mx-auto text-gray-800">
-  {/* Sticky solo visible en móvil */}
-  <div className="md:hidden sticky top-20 z-40 bg-white mb-4">
-    <div className="flex justify-center border-b py-1">
-      <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="text-scolBlue text-sm font-semibold tracking-wide hover:text-scolDark transition"
-      >
-        Ver más
-      </button>
+      {/* Sticky en móvil para el botón "Ver más" */}
+      <div className="md:hidden sticky top-20 z-40 bg-white mb-4">
+        <div className="flex justify-center border-b py-1">
+          <button
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="text-scolBlue text-sm font-semibold tracking-wide hover:text-scolDark transition"
+          >
+            Ver más
+          </button>
+        </div>
+      </div>
+
+      {/* Contenedor flexible para menú y contenido */}
+      <div className="flex flex-col md:flex-row gap-10">
+        {/* Menú lateral */}
+        <aside
+          className={`
+            w-full md:w-64 shrink-0 
+            ${isOpen ? "block bg-white shadow-md z-30" : "hidden"} 
+            md:block sticky top-24 self-start h-fit
+          `}
+        >
+          <ManualsMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+        </aside>
+
+
+        {/* Contenido principal */}
+        <main className="flex-1 space-y-24 pt-4">
+          <Outlet />
+          <div id="portal-root" />
+        </main>
+      </div>
     </div>
-  </div>
-
-  <div className="flex gap-10">
-    <aside className={`shrink-0 h-fit md:sticky md:top-24 ${isOpen ? "block" : "hidden"} md:block w-64`}>
-      <ManualsMenu isOpen={isOpen} setIsOpen={setIsOpen} />
-    </aside>
-
-    <main className="flex-1 space-y-24 pt-4">
-      <Outlet />
-      <div id="portal-root" />
-    </main>
-  </div>
-</div>
   );
 };
 
