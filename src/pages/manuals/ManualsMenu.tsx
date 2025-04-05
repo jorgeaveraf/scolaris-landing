@@ -10,7 +10,12 @@ import analytics from "../../assets/featurePage_2.png";
 import report from "../../assets/menuIcon_8.png";
 import alert from "../../assets/menuIcon_7.png";
 
-const ManualsMenu = () => {
+interface ManualsMenuProps {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+}
+
+const ManualsMenu = ({ isOpen, setIsOpen }: ManualsMenuProps) => {
   const location = useLocation();
 
   const mainLinks = [
@@ -33,17 +38,27 @@ const ManualsMenu = () => {
   const isInsideHome = location.pathname.startsWith("/manuales/home");
 
   return (
-    <nav className="space-y-2 text-scolBlue font-medium">
+    <div>
+    {/* Botón solo en móvil */}
+    <button
+      className="md:hidden text-scolBlue font-semibold tracking-wide underline underline-offset-2"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+    </button>
+
+    {/* Menú lateral */}
+    <div className="space-y-2 text-scolBlue font-medium">
       {mainLinks.map((link) => (
         <div key={link.to}>
           <NavLink
             to={link.to}
-            end // <- IMPORTANTE: solo activa exacto "/manuales/home", no sus subrutas
+            end
             className={({ isActive }) =>
               `flex items-center gap-2 px-3 py-2 rounded-md transition ${
                 isActive ? "bg-blue-100 font-bold" : "hover:bg-blue-50"
               }`
             }
+            onClick={() => setIsOpen(false)}
           >
             <img src={link.icon} alt={link.text} className="w-5 h-5" />
             {link.text}
@@ -60,6 +75,7 @@ const ManualsMenu = () => {
                       isActive ? "bg-blue-100 font-bold" : "hover:bg-blue-50"
                     }`
                   }
+                  onClick={() => setIsOpen(false)}
                 >
                   <img src={sublink.icon} alt={sublink.text} className="w-4 h-4" />
                   {sublink.text}
@@ -69,8 +85,9 @@ const ManualsMenu = () => {
           )}
         </div>
       ))}
-    </nav>
-  );
+    </div>
+  </div>
+);
 };
 
 export default ManualsMenu;
