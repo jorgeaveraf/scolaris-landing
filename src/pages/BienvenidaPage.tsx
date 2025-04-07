@@ -49,8 +49,8 @@ const BienvenidaPage: FC = () => {
           filter: inViewBienvenida ? "blur(0px)" : "blur(4px)",
           transition: { duration: 0.6, ease: "easeOut" },
         }}
-        className="relative bg-white py-12 px-6 md:px-10 rounded-xl shadow-sm"
-        >
+        className="relative bg-white py-12 px-6 md:px-10 rounded-xl shadow-sm pt-24 md:pt-12"
+      >
         <img
             src={bienvenida}
             alt="Decorativo de bienvenida"
