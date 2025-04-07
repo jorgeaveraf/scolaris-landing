@@ -13,7 +13,6 @@ const BienvenidaPage: FC = () => {
     const { ref: refPersonaliza, inView: inViewPersonaliza } = useSectionInView<HTMLDivElement>();
     const { ref: refQueSigue, inView: inViewQueSigue } = useSectionInView<HTMLDivElement>();
     const { ref: refSoporte, inView: inViewSoporte } = useSectionInView<HTMLDivElement>();
-    const { ref: refComencemos, inView: inViewComencemos } = useSectionInView<HTMLDivElement>();
 
   return (
     <section className="pt-24 pb-16 px-4 max-w-5xl mx-auto text-gray-800 space-y-24">
@@ -210,39 +209,6 @@ const BienvenidaPage: FC = () => {
         </ul>
         <div className="bg-scolBlue text-white p-4 mt-6 rounded-xl shadow-sm font-semibold text-center">
             ❤️ Tu experiencia es nuestra prioridad. Cualquier duda, aquí estaremos.
-        </div>
-        </motion.div>
-
-
-      {/* Slide 7: Comencemos */}
-        <motion.div
-        ref={refComencemos}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{
-            opacity: inViewComencemos ? 1 : 0.4,
-            y: inViewComencemos ? 0 : 20,
-            filter: inViewComencemos ? "blur(0px)" : "blur(4px)",
-            transition: { duration: 0.6, ease: "easeOut" },
-        }}
-        className="text-center"
-        >
-        <h2 className="text-3xl font-bold text-scolBlue mb-4">¡Comencemos!</h2>
-        <p className="text-lg mb-2 font-semibold text-gray-700">
-            ¡Listo! Ya tienes todo para empezar a configurar Scolaris.
-        </p>
-        <p className="text-lg text-gray-600 mb-6">
-            Solo haz clic en el botón para completar tu formulario y nosotros nos encargamos del resto.
-        </p>
-        <a
-            href="https://forms.gle/Vpmr7wbiNeD35JGTA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-scolBlue text-white font-bold px-6 py-3 rounded-md hover:bg-scolDark transition"
-        >
-            ⚙️ Iniciar configuración
-        </a>
-        <div className="text-sm text-gray-500 mt-4">
-            🕐 Contestar el formulario te tomará menos de 10 minutos.
         </div>
         </motion.div>
 

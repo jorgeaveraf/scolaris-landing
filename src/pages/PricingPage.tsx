@@ -148,72 +148,112 @@ const PricingPage: FC<PricingPageProps> = ({ openPaymentModal }) => {
         <h1 className="text-3xl md:text-4xl font-bold text-scolBlue text-center mb-12">
           Comparativa de Planes
         </h1>
-        <div className="overflow-y-scroll max-h-[70vh] scrollbar-hide">
-          <table className="w-full border-collapse text-sm md:text-base">
-            <thead className="sticky top-0 z-20 bg-scolSky shadow-sm">
-              <tr className="bg-scolSky text-white">
-                <th className="text-left px-4 py-3 font-semibold bg-scolSky">
-                  Beneficios incluidos
-                </th>
-                {["basic", "standard", "premium"].map((key) => (
-                  <th
-                    key={key}
-                    className="px-4 py-3 font-semibold cursor-pointer bg-scolSky"
-                    onMouseEnter={() => setHoveredColumn(key)}
-                  >
-                    {labelMap[key]}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {pricingData.map((item, idx) => (
-                <tr
-                  key={idx}
-                  className={idx % 2 === 0 ? "bg-white" : "bg-scolGray/40"}
-                >
-                  <td className="px-4 py-3 text-left align-top">{item.feature}</td>
+    
+        {/* Desktop: Tabla completa */}
+        <div className="hidden md:block">
+          <div className="overflow-y-scroll max-h-[70vh] scrollbar-hide">
+            <table className="w-full border-collapse text-sm md:text-base">
+              <thead className="sticky top-0 z-20 bg-scolSky shadow-sm">
+                <tr className="bg-scolSky text-white">
+                  <th className="text-left px-4 py-3 font-semibold">Beneficios incluidos</th>
                   {["basic", "standard", "premium"].map((key) => (
-                    <td
+                    <th
                       key={key}
-                      className={`px-4 py-3 text-center transition-all duration-300 ${getColumnClass(key)}`}
+                      className="px-4 py-3 font-semibold cursor-pointer"
                       onMouseEnter={() => setHoveredColumn(key)}
                     >
-                      {item[key as keyof typeof item] === true ? (
-                        <img src={check} alt="check" className="h-5 w-5 inline" />
-                      ) : typeof item[key as keyof typeof item] === "string" ? (
-                        <span className="font-semibold">
-                          {item[key as keyof typeof item]}
-                        </span>
-                      ) : (
-                        "–"
-                      )}
+                      {labelMap[key]}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {pricingData.map((item, idx) => (
+                  <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-scolGray/40"}>
+                    <td className="px-4 py-3 text-left align-top">{item.feature}</td>
+                    {["basic", "standard", "premium"].map((key) => (
+                      <td
+                        key={key}
+                        className={`px-4 py-3 text-center transition-all duration-300 ${getColumnClass(key)}`}
+                        onMouseEnter={() => setHoveredColumn(key)}
+                      >
+                        {item[key as keyof typeof item] === true ? (
+                          <img src={check} alt="check" className="h-5 w-5 inline" />
+                        ) : typeof item[key as keyof typeof item] === "string" ? (
+                          <span className="font-semibold">
+                            {item[key as keyof typeof item]}
+                          </span>
+                        ) : (
+                          "–"
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+    
+                {/* Botones (desktop) */}
+                <tr className="sticky bottom-0 bg-white z-20 shadow-md">
+                  <td className="px-4 py-4"></td>
+                  {["basic", "standard", "premium"].map((key, idx) => (
+                    <td key={idx} className="px-4 py-4 text-center">
+                      <button
+                        className={`bg-scolBlue text-white font-semibold px-4 py-2 rounded-full transition-transform duration-300
+                        hover:bg-scolDark hover:scale-105 hover:shadow-lg
+                        ${hoveredColumn === key ? "scale-110 shadow-xl" : ""}`}
+                        onClick={() => openPaymentModal(planDetails[key as keyof typeof planDetails])}
+                      >
+                        Contratar {labelMap[key]}
+                      </button>
                     </td>
                   ))}
                 </tr>
-              ))}
-  
-              {/* Botones */}
-              <tr className="sticky bottom-0 bg-white z-20 shadow-md">
-                <td className="px-4 py-4 bg-white"></td>
-                {["basic", "standard", "premium"].map((key, idx) => (
-                  <td key={idx} className="px-4 py-4 text-center bg-white">
-                    <button
-                      className={`bg-scolBlue text-white font-semibold px-4 py-2 rounded-full transition-transform duration-300
-                      hover:bg-scolDark hover:scale-105 hover:shadow-lg
-                      ${hoveredColumn === key ? "scale-110 shadow-xl" : ""}`}
-                      onClick={() => openPaymentModal(planDetails[key as keyof typeof planDetails])}
-                    >
-                      Contratar {labelMap[key]}
-                    </button>
-                  </td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    
+        {/* Mobile: Tarjetas apiladas */}
+        <div className="md:hidden space-y-6">
+          {pricingData.map((item, idx) => (
+            <div key={idx} className="bg-white rounded-lg shadow p-4">
+              <h3 className="font-semibold text-scolBlue mb-2">{item.feature}</h3>
+              <ul className="divide-y divide-gray-200 text-sm">
+                {["basic", "standard", "premium"].map((key) => (
+                  <li key={key} className="py-2 flex justify-between items-center">
+                    <span className="font-medium">{labelMap[key]}</span>
+                    <span>
+                      {item[key as keyof typeof item] === true ? (
+                        <img src={check} alt="check" className="h-5 w-5" />
+                      ) : typeof item[key as keyof typeof item] === "string" ? (
+                        <span className="font-semibold">{item[key as keyof typeof item]}</span>
+                      ) : (
+                        "–"
+                      )}
+                    </span>
+                  </li>
                 ))}
-              </tr>
-            </tbody>
-          </table>
+              </ul>
+            </div>
+          ))}
+    
+          {/* Botones (mobile sticky) */}
+          <div className="md:hidden sticky bottom-0 z-30 bg-white border-t pt-3 pb-4 px-4">
+          <p className="text-center italic text-gray-600 mb-2">Contratar</p>
+            <div className="flex justify-between gap-2">
+              {["basic", "standard", "premium"].map((key) => (
+                <button
+                  key={key}
+                  className="flex-1 bg-scolBlue text-white text-sm font-medium px-2 py-2 rounded-full hover:bg-scolDark transition whitespace-nowrap"
+                  onClick={() => openPaymentModal(planDetails[key as keyof typeof planDetails])}
+                >
+                  {labelMap[key]}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     );
-  };
+  };    
   
   export default PricingPage;
