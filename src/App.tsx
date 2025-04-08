@@ -31,6 +31,7 @@ import TutoresSection from "./pages/manuals/TutoresSection";
 import AlumnosSection from "./pages/manuals/AlumnosSection";
 import InscripcionesSection from "./pages/manuals/InscripcionesSection";
 import PagosSection from "./pages/manuals/PagosSection";  
+import ServicesPage from "./pages/ServicesPage";
 
 
 function App() {
@@ -77,6 +78,7 @@ function App() {
           <Route path="/pricing" element={<PricingPage openPaymentModal={openPaymentModal} />} />
           <Route path="/bienvenida" element={<BienvenidaPage />} />
           <Route path="/confirmation" element={<ConfirmationPage />} />
+          <Route path="/servicios" element={<ServicesPage />} />
           <Route path="/manuales" element={<ManualLayout />}>
             <Route index element={<ManualsPage />} />
             <Route path="home" element={<HomeSection />} />
