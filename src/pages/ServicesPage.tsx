@@ -1,4 +1,4 @@
-import { FC, use, useState } from "react";
+import { FC, useState } from "react";
 import users from "../assets/menuIcon_4.png";
 import adeudo from "../assets/menuIcon_7.png";
 import bot from "../assets/featurePage_3.png";
