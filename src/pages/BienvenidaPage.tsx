@@ -204,7 +204,7 @@ const BienvenidaPage: FC = () => {
         </p>
         <ul className="space-y-2 text-gray-700 text-base">
             <li>📱 WhatsApp (bot)</li>
-            <li>📧 soporte@scolaris.mx</li>
+            <li>📧 soporte@scs.scolaris.mx</li>
             <li>📹 Videollamada (si tu plan la incluye)</li>
         </ul>
         <div className="bg-scolBlue text-white p-4 mt-6 rounded-xl shadow-sm font-semibold text-center">
