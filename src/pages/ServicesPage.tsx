@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect } from "react";
 import users from "../assets/menuIcon_4.png";
 import adeudo from "../assets/menuIcon_7.png";
 import bot from "../assets/featurePage_3.png";
@@ -62,7 +62,7 @@ const services: Service[] = [
     name: "Activación de Correos Institucionales",
     type: "subscription",
     priceMXN: 400,
-    description: "Crea automaticamente correos en Google Workspace para los alumnos al registrarlos.",
+    description: "Crea automáticamente correos en Google Workspace para los alumnos al registrarlos.",
     icon: correo,
     link: import.meta.env.VITE_MERCADOPAGO_URL_EMAIL,
   },
@@ -98,6 +98,18 @@ const ServicesPage: FC = () => {
 
   const closeModal = () => setSelected(null);
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
+
+
   return (
     <section className="px-6 py-20 max-w-6xl mx-auto text-gray-800">
       <h2 className="text-3xl font-bold text-scolBlue text-center mb-10">
@@ -115,9 +127,17 @@ const ServicesPage: FC = () => {
               <div
                 key={i}
                 className="relative group perspective"
-                onClick={() => handleSelect(s)}
               >
-                <div className="relative w-full h-52 transition-transform duration-500 transform-style-preserve-3d group-hover:rotate-y-180 cursor-pointer">
+                <div
+                  className={`relative w-full h-52 transition-transform duration-500 transform-style-preserve-3d ${
+                    isMobile && flippedIndex === i ? "rotate-y-180" : !isMobile ? "group-hover:rotate-y-180" : ""
+                  }`}
+                  onClick={() => {
+                    if (isMobile) {
+                      setFlippedIndex(flippedIndex === i ? null : i);
+                    }
+                  }}
+                >
                   {/* Front */}
                     <div className="absolute w-full h-full backface-hidden bg-white border rounded-xl shadow-md p-4 flex flex-col justify-center items-center">
                     <img src={s.icon} alt="icono" className="w-10 h-10 mb-3" />
@@ -129,9 +149,33 @@ const ServicesPage: FC = () => {
 
 
                   {/* Back */}
-                  <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-scolBlue text-white rounded-xl p-4 flex items-center justify-center text-sm text-center">
-                    {s.description}
+                  <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-scolBlue text-white rounded-xl p-4 flex flex-col items-center justify-center text-sm text-center space-y-2">
+                    <p>{s.description}</p>
+                    
+                    {isMobile ? (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSelect(s);
+                        }}
+                        className="mt-2 bg-white text-scolBlue font-semibold text-sm px-4 py-2 rounded-full hover:bg-scolGray"
+                      >
+                        Contratar
+                      </button>
+                    ) : (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleSelect(s);
+                        }}
+                        className="mt-2 border border-white text-white font-semibold text-sm px-4 py-2 rounded-full hover:bg-white hover:text-scolBlue transition"
+                      >
+                        Contratar
+                      </button>
+                    )}
                   </div>
+
+
                 </div>
               </div>
             ))}
@@ -152,14 +196,15 @@ const ServicesPage: FC = () => {
             </p>
             <div className="flex justify-center gap-4 mt-6">
             <button
-            onClick={() => {
-                window.open(selected.link, "_blank");
-                closeModal();
-            }}
-            className="bg-scolBlue text-white px-4 py-2 rounded-md hover:bg-scolDark"
+              onClick={() => {
+                window.open(selected.link, "_blank", "noopener,noreferrer");
+                setTimeout(closeModal, 200); // da tiempo a abrir antes de cerrar
+              }}
+              className="bg-scolBlue text-white px-4 py-2 rounded-md hover:bg-scolDark transition"
             >
-            Confirmar
+              Confirmar
             </button>
+
               <button
                 onClick={closeModal}
                 className="border border-scolBlue text-scolBlue px-4 py-2 rounded-md hover:bg-gray-100"
