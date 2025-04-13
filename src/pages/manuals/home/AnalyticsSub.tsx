@@ -120,7 +120,7 @@ const AnalyticsSub: FC = () => {
       >
         <h3 className="text-xl font-semibold text-scolBlue">Acceso según tu Plan</h3>
         <p className="text-gray-700">
-          Algunas analíticas están disponibles <strong>según el paquete contratado</strong>. Revisa <em>Scolaris – Paquetes</em> para más detalles.
+          Algunas analíticas están disponibles <strong>según el paquete contratado</strong>.
         </p>
       </motion.div>
 

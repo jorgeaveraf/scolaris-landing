@@ -7,11 +7,11 @@ const TermsPage: FC = () => {
         Términos y Condiciones Generales
       </h1>
 
-      <p className="text-sm text-gray-600 mb-1">Uso de Scolaris</p>
+      <p className="text-sm text-gray-600 mb-1">Uso de ScolarisQ</p>
       <p className="text-sm text-gray-600 mb-6">Última actualización: Marzo 2025</p>
 
       <p className="mb-6">
-        Bienvenido a Scolaris. Este documento reúne los términos legales que regulan el uso
+        Bienvenido a ScolarisQ. Este documento reúne los términos legales que regulan el uso
         de nuestra plataforma, los servicios ofrecidos en modalidad gratuita o de pago, y el
         tratamiento de los datos de nuestros usuarios y clientes.
       </p>
@@ -59,7 +59,7 @@ const TermsPage: FC = () => {
       <h3 className="text-lg font-bold text-scolBlue mb-2">4. Política de privacidad</h3>
       <ul className="list-disc ml-6 mb-6 space-y-2 text-sm">
         <li>Todos los datos ingresados por el cliente o sus usuarios son propiedad del cliente.</li>
-        <li>Scolaris no vende ni comparte información con terceros.</li>
+        <li>ScolarisQ no vende ni comparte información con terceros.</li>
         <li>Se utilizan servicios de almacenamiento seguros (Google Cloud).</li>
         <li>Se implementan medidas técnicas y organizativas para proteger la información.</li>
       </ul>
@@ -79,7 +79,7 @@ const TermsPage: FC = () => {
       <h3 className="text-lg font-bold text-scolBlue mb-2">6. Limitación de responsabilidad</h3>
       <ul className="list-disc ml-6 mb-6 space-y-2 text-sm">
         <li>
-          Scolaris no se hace responsable por decisiones tomadas con base en los datos del sistema.
+          ScolarisQ no se hace responsable por decisiones tomadas con base en los datos del sistema.
         </li>
         <li>
           La disponibilidad del sistema depende de factores técnicos externos (servicios de terceros).

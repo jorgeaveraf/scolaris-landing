@@ -34,7 +34,7 @@ const PeriodosSection: FC = () => {
 
         <h3 className="text-xl font-semibold">Configura y Administra</h3>
         <p className="text-gray-700">
-          El módulo de Periodos es el primer paso para gestionar inscripciones en Scolaris. Aquí defines los ciclos académicos, estableces fechas y configuras la periodicidad de los pagos. Sin un periodo activo, no puedes registrar inscripciones ni pagos.
+          El módulo de Periodos es el primer paso para gestionar inscripciones en ScolarisQ. Aquí defines los ciclos académicos, estableces fechas y configuras la periodicidad de los pagos. Sin un periodo activo, no puedes registrar inscripciones ni pagos.
         </p>
       </motion.div>
 
