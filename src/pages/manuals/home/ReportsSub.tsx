@@ -89,7 +89,6 @@ const ReportsSub: FC = () => {
         <ul className="list-disc list-inside text-gray-700 space-y-1">
           <li><strong>La descarga de reportes no está disponible en el plan Básico.</strong></li>
           <li>Algunos reportes pueden estar limitados según el paquete contratado.</li>
-          <li>Para conocer más detalles, revisa <em>Scolaris - Paquetes</em>.</li>
         </ul>
       </motion.div>
 

@@ -58,7 +58,6 @@ const AlertsSub: FC = () => {
         <h3 className="text-xl font-semibold text-scolBlue">Cómo Navegar en las Alertas</h3>
         <p className="text-gray-700">
           Haz clic en cualquier alerta para ver más detalles sobre cada registro. La cantidad de alertas que ves depende de tu plan.
-          Revisa <em>Scolaris - Paquetes</em> para más detalles.
         </p>
       </motion.div>
 

@@ -27,10 +27,10 @@ const IntroSection: FC = () => {
         }}
         className="space-y-6"
       >
-        <h1 className="text-4xl font-extrabold text-scolBlue">¡Bienvenido a Scolaris!</h1>
+        <h1 className="text-4xl font-extrabold text-scolBlue">¡Bienvenido a ScolarisQ!</h1>
         <h2 className="text-2xl font-semibold">Gestiona tu escuela con un click!</h2>
         <p className="text-lg text-gray-700">
-          Scolaris es una herramienta que te ayuda a organizar alumnos, inscripciones y pagos en tu escuela o academia. Es fácil de usar y te ayuda a ahorrar tiempo en tareas administrativas.
+          ScolarisQ es una herramienta que te ayuda a organizar alumnos, inscripciones y pagos en tu escuela o academia. Es fácil de usar y te ayuda a ahorrar tiempo en tareas administrativas.
         </p>
 
       </motion.div>
@@ -46,7 +46,7 @@ const IntroSection: FC = () => {
         }}
         className="space-y-6"
       >
-        <h3 className="text-xl font-bold text-scolBlue">¿Qué puedes lograr con Scolaris?</h3>
+        <h3 className="text-xl font-bold text-scolBlue">¿Qué puedes lograr con ScolarisQ?</h3>
         <ul className="list-disc list-inside text-gray-700 space-y-1">
           <li>Registrar alumnos e inscripciones en segundos.</li>
           <li>Controlar pagos, aplicar descuentos y manejar abonos.</li>
@@ -97,7 +97,7 @@ const IntroSection: FC = () => {
         }}
         className="space-y-6"
       >
-        <h2 className="text-2xl font-semibold text-scolBlue">¿Cómo acceder a Scolaris? (Fácil y rápido)</h2>
+        <h2 className="text-2xl font-semibold text-scolBlue">¿Cómo acceder a ScolarisQ? (Fácil y rápido)</h2>
         <ul className="list-disc list-inside text-gray-700 space-y-1">
           <li><strong>Desde la Web:</strong> Usa el enlace de tu administrador.</li>
           <li><strong>Desde la App:</strong> Descarga AppSheet y entra con tus credenciales.</li>
@@ -117,8 +117,8 @@ const IntroSection: FC = () => {
       >
         <h2 className="text-2xl font-semibold text-scolBlue">Preguntas Frecuentes (FAQ)</h2>
         <ul className="text-gray-700 space-y-1">
-          <li><strong>¿Olvidé mi contraseña?</strong> Pide ayuda a tu institución. Scolaris no gestiona accesos.</li>
-          <li><strong>¿Puedo usar Scolaris en varios dispositivos?</strong> Sí, usando tus credenciales.</li>
+          <li><strong>¿Olvidé mi contraseña?</strong> Pide ayuda a tu institución. ScolarisQ no gestiona accesos.</li>
+          <li><strong>¿Puedo usar ScolarisQ en varios dispositivos?</strong> Sí, usando tus credenciales.</li>
           <li><strong>¿Debo compartir cuenta?</strong> No. Cada usuario debe tener su propio acceso.</li>
           <li><strong>¿No veo datos actualizados?</strong> Sincroniza la app o espera unos minutos.</li>
         </ul>
@@ -160,7 +160,7 @@ const IntroSection: FC = () => {
           <li><strong>Contacto directo:</strong> Desde el panel "Home" abre un ticket.</li>
         </ul>
         <p className="text-xl font-semibold text-scolBlue">
-          ¡Estamos aquí para ayudarte! Bienvenido a Scolaris, la solución completa para una gestión escolar sencilla y efectiva.
+          ¡Estamos aquí para ayudarte! Bienvenido a ScolarisQ, la solución completa para una gestión escolar sencilla y efectiva.
         </p>
       </motion.div>
     </section>
