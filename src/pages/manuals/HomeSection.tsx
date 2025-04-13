@@ -32,9 +32,9 @@ const HomeSection: FC = () => {
         </div>
 
 
-        <h2 className="text-2xl font-semibold">Tu Centro de Control en Scolaris</h2>
+        <h2 className="text-2xl font-semibold">Tu Centro de Control en ScolarisQ</h2>
         <p className="text-lg text-gray-700">
-          La sección <strong>Home</strong> es el punto de partida en Scolaris. Desde aquí, puedes acceder rápidamente a las herramientas más importantes y realizar acciones esenciales en solo unos clics.
+          La sección <strong>Home</strong> es el punto de partida en ScolarisQ. Desde aquí, puedes acceder rápidamente a las herramientas más importantes y realizar acciones esenciales en solo unos clics.
         </p>
       </motion.div>
 

@@ -45,7 +45,7 @@ const features = [
     title: "Personalización para tu escuela",
     icon: featurePage_6,
     description:
-      "Adapta Scolaris a la identidad institucional de tu escuela y vive una experiencia personalizada.",
+      "Adapta ScolarisQ a la identidad institucional de tu escuela y vive una experiencia personalizada.",
   },
   {
     title: "Actualizaciones constantes y gratuitas",
@@ -77,14 +77,14 @@ const FeaturesPage: FC = () => {
             Todo lo que necesitas,<br className="hidden md:block" /> en un solo lugar
           </h2>
           <p className="text-lg text-gray-600 max-w-xl leading-relaxed">
-            Scolaris no solo facilita tu trabajo diario, sino que transforma la manera en la que gestionas tu escuela. Estas son las razones por las que las instituciones confían en nosotros.
+            ScolarisQ no solo facilita tu trabajo diario, sino que transforma la manera en la que gestionas tu escuela. Estas son las razones por las que las instituciones confían en nosotros.
           </p>
         </div>
 
         <div className="flex-1">
           <img
             src={featureImage}
-            alt="Características de Scolaris"
+            alt="Características de ScolarisQ"
             className="w-full max-w-md mx-auto"
           />
         </div>

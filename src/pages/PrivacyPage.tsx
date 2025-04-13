@@ -7,11 +7,11 @@ const Privacy: FC = () => {
         Aviso de Privacidad
       </h1>
 
-      <p className="text-sm text-gray-600 mb-1">Scolaris</p>
+      <p className="text-sm text-gray-600 mb-1">ScolarisQ</p>
       <p className="text-sm text-gray-600 mb-6">Última actualización: Marzo 2025</p>
 
       <p className="mb-6">
-        Scolaris se compromete a proteger la privacidad y la integridad de la información
+        ScolarisQ se compromete a proteger la privacidad y la integridad de la información
         gestionada dentro de esta aplicación. Al usar esta app, aceptas las siguientes prácticas de datos:
       </p>
 
@@ -21,7 +21,7 @@ const Privacy: FC = () => {
           Los datos ingresados en la app pertenecen exclusivamente a la institución que contrató el servicio.
         </li>
         <li>
-          Scolaris no reclama propiedad sobre ninguna información institucional o personal cargada.
+          ScolarisQ no reclama propiedad sobre ninguna información institucional o personal cargada.
         </li>
       </ul>
 
