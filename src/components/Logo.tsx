@@ -5,7 +5,7 @@ import logo from "../assets/logo.svg";
 const Logo: FC = () => {
   return (
     <Link to="/" className="flex items-center gap-2">
-      <img src={logo} alt="ScolarisQ Logo" className="h-10 md:h-12 w-auto" />
+      <img src={logo} alt="ScolarisQ Logo" className="h-20 md:h-25 w-auto" />
       {/* Puedes incluir el nombre si lo deseas */}
       {/* <span className="text-xl font-avenir text-scolBlue font-bold">ScolarisQ</span> */}
     </Link>
