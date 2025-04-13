@@ -13,13 +13,13 @@ interface TestimonialData {
 
 const testimonials: TestimonialData[] = [
   {
-    text: "Desde que usamos Scolaris, el proceso de inscripción es mucho más fácil y organizado.",
+    text: "Desde que usamos ScolarisQ, el proceso de inscripción es mucho más fácil y organizado.",
     name: "Diana Laura V.",
     role: "Directora, Cendi Carrusel",
     logo: logoCC,
   },
   {
-    text: "Scolaris nos da claridad en los reportes y seguimiento. Nos ha hecho más eficientes.",
+    text: "ScolarisQ nos da claridad en los reportes y seguimiento. Nos ha hecho más eficientes.",
     name: "Marely M.",
     role: "Directora, Secundaria Instituto Patria",
     logo: logoSIP,

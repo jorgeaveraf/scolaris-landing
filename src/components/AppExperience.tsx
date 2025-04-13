@@ -25,7 +25,7 @@ const AppExperience: FC = () => {
             Una app que funciona para todos
           </h2>
           <p className="text-base text-gray-700 mb-6 font-sans">
-            Ya sea desde computadora, celular o tablet, Scolaris te permite
+            Ya sea desde computadora, celular o tablet, ScolarisQ te permite
             gestionar tu escuela de forma sencilla, estés donde estés.
           </p>
 
@@ -58,7 +58,7 @@ const AppExperience: FC = () => {
         >
           <img
             src={dashboard}
-            alt="Dashboard Scolaris"
+            alt="Dashboard ScolarisQ"
             className="max-w-sm w-full rounded-xl shadow-md"
           />
         </div>

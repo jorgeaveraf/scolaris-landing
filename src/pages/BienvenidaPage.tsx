@@ -30,7 +30,7 @@ const BienvenidaPage: FC = () => {
       >
         <div className="flex-1 text-left">
           <h1 className="text-5xl md:text-6xl font-extrabold text-scolBlue leading-tight mb-6">
-            Descubre a <br className="hidden sm:block" /> Scolaris
+            Descubre a <br className="hidden sm:block" /> ScolarisQ
           </h1>
           <p className="text-2xl md:text-3xl text-scolDark font-medium max-w-xl">
             Gestión escolar inteligente desde el primer día.
@@ -59,7 +59,7 @@ const BienvenidaPage: FC = () => {
 
         <div className="max-w-3xl mx-auto text-left space-y-6">
             <h2 className="text-4xl font-extrabold text-scolBlue">
-            ¡Bienvenido a Scolaris!
+            ¡Bienvenido a ScolarisQ!
             </h2>
 
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
@@ -67,7 +67,7 @@ const BienvenidaPage: FC = () => {
             </p>
 
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            A continuación encontrarás los primeros pasos para el uso de tu suscripción dentro de Scolaris, de acuerdo con tus preferencias.
+            A continuación encontrarás los primeros pasos para el uso de tu suscripción dentro de ScolarisQ, de acuerdo con tus preferencias.
             </p>
             <div className="relative bg-blue-50 p-5 md:p-6 rounded-2xl shadow-md border-l-4 border-blue-500 mt-8 max-w-2xl">
             <img
@@ -98,7 +98,7 @@ const BienvenidaPage: FC = () => {
         className="space-y-6"
         >
         <h2 className="text-3xl font-bold text-scolBlue">
-            ¿Cómo usar Scolaris?
+            ¿Cómo usar ScolarisQ?
         </h2>
 
         <p className="text-lg text-gray-700">
@@ -137,7 +137,7 @@ const BienvenidaPage: FC = () => {
             Personaliza tu sistema
             </h2>
             <p className="text-lg mb-4 text-gray-700">
-            Queremos configurar Scolaris según tus preferencias institucionales. Por eso te solicitaremos información como:
+            Queremos configurar ScolarisQ según tus preferencias institucionales. Por eso te solicitaremos información como:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 text-base">
             <li>Datos fiscales (si necesitas factura)</li>
@@ -197,7 +197,7 @@ const BienvenidaPage: FC = () => {
         }}
         >
         <h2 className="text-3xl font-bold text-scolBlue mb-4">
-            Comunicación equipo Scolaris
+            Comunicación equipo ScolarisQ
         </h2>
         <p className="text-lg mb-4 text-gray-700">
             Recuerda que dispones de estos canales para solicitar ayuda en todo momento:

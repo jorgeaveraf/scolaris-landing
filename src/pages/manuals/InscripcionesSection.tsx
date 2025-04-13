@@ -34,7 +34,7 @@ const InscripcionesSection: FC = () => {
 
         <h3 className="text-xl font-semibold">Alumnos inscritos a periodos</h3>
         <p className="text-gray-700">
-          El módulo de <strong>Inscripciones</strong> te permite ver y administrar las inscripciones de los alumnos en cada <strong>periodo</strong> dentro de Scolaris.
+          El módulo de <strong>Inscripciones</strong> te permite ver y administrar las inscripciones de los alumnos en cada <strong>periodo</strong> dentro de ScolarisQ.
           <br />
           <br />
           <strong>Importante:</strong> Este módulo <strong>solo permite consultar, editar o eliminar inscripciones existentes</strong>. Si necesitas agregar una nueva inscripción, debes hacerlo desde <em>Home</em> o el módulo de <em>Alumnos</em>.

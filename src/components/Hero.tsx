@@ -49,7 +49,7 @@ const Hero: FC<HeroProps> = ({ openModal }) => {
           <div className="md:w-1/2">
             <img
               src={heroImg}
-              alt="Vista previa de Scolaris"
+              alt="Vista previa de ScolarisQ"
               className="w-full max-w-md mx-auto md:ml-6"
             />
           </div>

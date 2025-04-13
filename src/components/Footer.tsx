@@ -10,7 +10,7 @@ const Footer: FC<FooterProps> = ({ openModal }) => {
   return (
     <section className="bg-scolBlue text-white py-16 px-6 text-center">
       <h2 className="text-3xl md:text-4xl font-bold mb-4">
-        Empieza a usar Scolaris hoy
+        Empieza a usar ScolarisQ hoy
       </h2>
       <p className="text-lg mb-6">
         ¡La primera mensualidad es gratis! Sin tarjetas. Sin compromiso.
@@ -23,7 +23,7 @@ const Footer: FC<FooterProps> = ({ openModal }) => {
       </button>
 
       <div className="mt-10 text-sm text-white/70">
-        <p>&copy; {new Date().getFullYear()} Scolaris. Todos los derechos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} ScolarisQ. Todos los derechos reservados.</p>
         <p className="mt-2 space-x-2">
           <Link to="/privacy" className="hover:underline">Aviso de Privacidad</Link>
           <span>·</span>

@@ -28,7 +28,7 @@ const ConfirmationPage: FC = () => {
           ¡Pago recibido con éxito!
         </h1>
         <p className="text-gray-700 text-lg mb-6">
-          Gracias por contratar Scolaris. Nos contactaremos con los próximos pasos y tu sistema se activará en breve.
+          Gracias por contratar ScolarisQ. Nos contactaremos con los próximos pasos y tu sistema se activará en breve.
         </p>
         <p className="text-gray-600 text-sm mb-6">
           Mientras tanto, consulta nuestra guía de bienvenida para comenzar a familiarizarte.
