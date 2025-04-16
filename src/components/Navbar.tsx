@@ -27,7 +27,7 @@ const Navbar: FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full bg-white py-4 px-6 z-50 transition-shadow duration-300 ${
+      className={`fixed top-0 left-0 w-full bg-white py-2 px-6 z-50 transition-shadow duration-300 ${
         hasShadow ? "shadow-md" : "shadow-sm"
       }`}
     >

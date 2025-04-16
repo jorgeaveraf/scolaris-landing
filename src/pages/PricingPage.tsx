@@ -1,6 +1,8 @@
 import check from "../assets/check.png";
 import { FC, useState } from "react";
 import { Plan } from "../types/Plan";
+import { Link } from "react-router-dom";
+
 
 interface PricingPageProps {
   openPaymentModal: (plan: Plan) => void;
@@ -148,6 +150,21 @@ const PricingPage: FC<PricingPageProps> = ({ openPaymentModal }) => {
         <h1 className="text-3xl md:text-4xl font-bold text-scolBlue text-center mb-12">
           Comparativa de Planes
         </h1>
+
+        <div className="text-center mb-12">
+        <Link
+          to="/servicios"
+          className="block bg-scolLight/10 border border-scolBlue rounded-xl p-5 text-center shadow hover:shadow-md hover:scale-105 transition max-w-md mx-auto mb-12"
+        >
+          <p className="text-scolBlue font-bold text-lg mb-1">¿Necesitas más funcionalidades?</p>
+          <p className="text-sm text-gray-600 mb-2">Descubre nuestros servicios adicionales como bots, recordatorios y más.</p>
+          <span className="inline-block bg-scolBlue text-white px-4 py-1 text-sm rounded-full mt-2">
+            Ver Servicios Adicionales
+          </span>
+        </Link>
+
+        </div>
+
     
         {/* Desktop: Tabla completa */}
         <div className="hidden md:block">
