@@ -6,7 +6,7 @@ import Hero from "./components/Hero";
 import Features from "./components/Features";
 import Pricing from "./components/Pricing";
 import AppExperience from "./components/AppExperience";
-import Testimonial from "./components/Testimonial";
+//import Testimonial from "./components/Testimonial";
 import Footer from "./components/Footer";
 import FeaturesPage from "./pages/FeaturesPage";
 import PricingPage from "./pages/PricingPage";
@@ -66,7 +66,7 @@ function App() {
                 <Features />
                 <Pricing openPaymentModal={openPaymentModal} />
                 <AppExperience />
-                <Testimonial />
+                {/* <Testimonial /> */}
                 <Footer openModal={openTrialModal} />
               </>
             }
