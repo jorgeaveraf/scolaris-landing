@@ -38,7 +38,7 @@ const Hero: FC<HeroProps> = ({ openModal }) => {
                 Probar gratis 1 mes
               </button>
               <button
-                onClick={() => openVideo("c0BJRR_TIEI")}
+                onClick={() => openVideo("1T4WO5aHq3qqGsZ06zuyEQC5FBEgB_Bb1")}
                 className="border border-scolBlue text-scolBlue px-6 py-3 rounded-full hover:bg-scolGray hover:scale-105 hover:shadow-lg transition-transform duration-200"
               >
                 Ver demo

@@ -13,11 +13,13 @@ const VideoModal: FC<VideoModalProps> = ({ isOpen, onClose, videoId }) => {
   const portalRoot = document.getElementById("portal-root");
   if (!isOpen || !portalRoot) return null;
 
+  const googleDriveEmbedUrl = `https://drive.google.com/file/d/${videoId}/preview`;
+
   return ReactDOM.createPortal(
     <Modal isOpen={isOpen} onClose={onClose} size="xl">
       <div className="aspect-video w-full">
         <iframe
-          src={`https://www.youtube.com/embed/${videoId}`}
+          src={googleDriveEmbedUrl}
           title="Video tutorial"
           allow="autoplay; encrypted-media"
           allowFullScreen
