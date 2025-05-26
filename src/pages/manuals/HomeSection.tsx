@@ -117,7 +117,7 @@ const HomeSection: FC = () => {
         }}
       >
         <button
-          onClick={() => openVideo("c0BJRR_TIEI")}
+          onClick={() => openVideo("1OmhgVqeTIysOpz5d7JOcjDIlGGwfO72q")}
           className="text-scolBlue underline font-semibold hover:text-scolDark transition"
         >
           📹 ¿Necesitas Ayuda? Revisa nuestros videotutoriales
