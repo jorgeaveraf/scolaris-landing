@@ -32,6 +32,7 @@ import AlumnosSection from "./pages/manuals/AlumnosSection";
 import InscripcionesSection from "./pages/manuals/InscripcionesSection";
 import PagosSection from "./pages/manuals/PagosSection";  
 import ServicesPage from "./pages/ServicesPage";
+import ChatWidget from "./components/ChatWidget";
 
 
 function App() {
@@ -94,6 +95,8 @@ function App() {
           <Route path="*" element={<NotFoundPage />} />     
         </Routes>
       </main>
+
+      <ChatWidget />
 
       {/* Modal para prueba gratuita */}
       {isTrialModalOpen && (
